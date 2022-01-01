@@ -1,0 +1,55 @@
+{
+	"folders": [
+		{
+			"path": "MUSICHAIR"
+		},
+		{
+			"path": "CHOPRT"
+		},
+		{
+			"path": "CIELRCPT"
+		},
+		{
+			"path": "PPSUM"
+		},
+		{
+			"path": "FLOW004"
+		},
+		{
+			"path": "FLOW007"
+		},
+		{
+			"path": "FLOW018"
+		},
+		{
+			"path": "PALL01"
+		},
+		{
+			"path": "TSORT"
+		},
+		{
+			"path": "PRB01"
+		},
+		{
+			"path": "FLOW016"
+		},
+		{
+			"path": "FLOW017"
+		},
+		{
+			"path": "TRAVELPS"
+		},
+		{
+			"path": "CARRYGOLD"
+		},
+		{
+			"path": "VACCINQ"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"algorithm": "cpp"
+		}
+	}
+}
