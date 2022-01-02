@@ -2,17 +2,18 @@
 #include <string>
 using namespace std;
 
-char swap(char a)
+void encode(string a)
 {
 	int temp;
-	char res;
-	temp = (int)a;
+	string res;
 
-	for(int i=126;i>=temp;i--)
+	for (int i=0;i<a.size();i++)
 	{
-		res = (char)i;
+		temp = 109 - (int)a[i];
+		res[i] = (char)(temp*2 +1 + (int)a[i]);
+		cout << res[i];
 	}
-	return res;
+	cout << endl;
 }
 
 int main() 
@@ -28,17 +29,15 @@ int main()
 		for (int i=0;i<len;i++)
 	    //for (int i=0;i<str.size();i++)
 	    {
-	        if (i%2==0)
+	        if (i%2!=0)
 	        {
 	            char temp;
-	            temp = str[i];
-	            str[i]=str[i+1];
-	            str[i+1]=temp;
-	        }
-			
-	        //str[i] = swap(str[i]);
+	            temp = str[i-1];
+	            str[i-1]=str[i];
+	            str[i]=temp;
+	        }	        
 	    }
-		cout << str;
+		encode(str);
 	}
 	return 0;
 }
