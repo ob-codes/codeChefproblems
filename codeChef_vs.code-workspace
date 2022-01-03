@@ -44,12 +44,23 @@
 		},
 		{
 			"path": "VACCINQ"
+		},
+		{
+			"path": "ENCMSG"
+		},
+		{
+			"path": "AMR15A"
 		}
 	],
 	"settings": {
 		"files.associations": {
 			"iostream": "cpp",
-			"algorithm": "cpp"
+			"algorithm": "cpp",
+			"xstring": "cpp",
+			"exception": "cpp",
+			"memory": "cpp",
+			"tuple": "cpp",
+			"utility": "cpp"
 		}
 	}
 }
