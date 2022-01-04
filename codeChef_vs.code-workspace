@@ -50,6 +50,9 @@
 		},
 		{
 			"path": "AMR15A"
+		},
+		{
+			"path": "TWOVSTEN"
 		}
 	],
 	"settings": {
@@ -60,7 +63,11 @@
 			"exception": "cpp",
 			"memory": "cpp",
 			"tuple": "cpp",
-			"utility": "cpp"
+			"utility": "cpp",
+			"iterator": "cpp",
+			"xhash": "cpp",
+			"xmemory": "cpp",
+			"xutility": "cpp"
 		}
 	}
 }
