@@ -8,21 +8,11 @@ int main() {
 
     while(t--)
     {
-        int temp, attempts = 0;
-        bool isDivisible = false;
+        int temp;
         cin >> temp;
 
-        for (int i=0; i < 5; i++)
-        {
-            if (temp %10 ==0)
-            {
-                isDivisible = true; 
-                break;
-            }
-            temp *= 2;
-            attempts++;
-        }
-        if (isDivisible) cout << attempts << endl;
+        if (temp %10 ==0) cout << "0" << endl;
+        else if (temp %5 ==0) cout << "1" << endl;
         else cout << "-1" << endl;
     }
 
