@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 int calculate(int, int);
@@ -21,17 +22,11 @@ int main()
 
 int calculate(int a, int b)
 {
-    int infected =1;
-    if (b==0) return infected=1;
-    for (int i=1;i <=b;i++)
+    int infected;
+    if (b <= 10) infected = pow(2, b);
+    else 
     {
-        if (infected >= a)
-        {
-            infected = a;
-            break;
-        }
-        if (i<=10) infected *= 2;
-        else if (i>10) infected *= 3;
+        infected = pow(3, (b-10))*pow(2, 10);
     }
     return infected;
 }
