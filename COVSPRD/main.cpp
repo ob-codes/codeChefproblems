@@ -1,8 +1,9 @@
 #include <iostream>
-#include <math.h>
+#define ull unsigned long long
+
 using namespace std;
 
-int calculate(int, int);
+int calculate(ull, ull);
 
 int main() 
 {
@@ -11,22 +12,32 @@ int main()
 	cin >> t;
 	while (t--)
     {
-        int population, days, res;
+        ull population, days;
         
         cin >> population >> days;
-        res = calculate(population, days);
-        cout << res << endl;
+        calculate(population, days);
     }
     return 0;
 }
 
-int calculate(int a, int b)
+int calculate(ull a, ull b)
 {
-    int infected;
-    if (b <= 10) infected = pow(2, b);
-    else 
+    ull infected =1;
+    if (b==0)
     {
-        infected = pow(3, (b-10))*pow(2, 10);
+        cout << infected << endl;
+        return 0;
     }
-    return infected;
+    for (int i=1;i <=b;i++)
+    {
+        if (infected >= a)
+        {
+            infected = a;
+            break;
+        }
+        if (i<=10) infected *= 2;
+        else if (i>10) infected *= 3;
+    }
+    cout << infected << endl;
+    return 0;
 }
