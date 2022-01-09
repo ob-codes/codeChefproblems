@@ -8,10 +8,11 @@ using namespace std;
 #define ull unsigned long long
 
 string decimalToBinary(double);
+bool isPrime(ull);
 
 int main() 
 {
-	// your code goes here
+	//this program finds a string inside another binary string
 	int t;
 	cin >> t;
 	while (t--)
@@ -23,13 +24,16 @@ int main()
         double len = str.size();
         double val = pow(2, len);
 
-        for(double i=1; i < val;i++)
+        for(ull i=1; i < val;i++)
         {
-            str2 = decimalToBinary(i);
-            if (str.find(str2) != string::npos)
+            if (isPrime(i))
             {
-                isfound = true;
-            }
+                str2 = decimalToBinary(i);
+                if (str.find(str2) != string::npos)
+                {
+                    isfound = true;
+                }
+            }            
         }
         if (isfound) cout << "YES" << '\n';
         else cout << "NO" << '\n';
@@ -51,4 +55,18 @@ string decimalToBinary(double n)
         return str2.substr(loc1);
     
     return "0";
+}
+
+bool isPrime(ull current)
+{
+    bool res = true;
+    if (current==1) res = false;
+    for (ull i=2;i<current;i++)
+    {
+        if (current%i==0) 
+        {
+            res = false;
+        }
+    }
+    return res;
 }
