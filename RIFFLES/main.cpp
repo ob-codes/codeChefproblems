@@ -18,23 +18,22 @@ int main()
         int n, times;
         cin >> n >> times;
 
-        //int * array = new int[n];
         vector<int> vector1;
         
         for (auto i = 0; i < n; i++)
         {
             vector1.push_back(i+1);
-            cout << vector1[i] << ' ';          
+            cout << vector1[i] << ' ';
         }
         cout << '\n';
 
         riffles(vector1, n, times);
-        for (int i = 0; i < n; i++)
+
+        for (auto i = 0; i < n; i++)
         {
             cout << vector1[i] << ' ';
         }
         cout << '\n';
-        //delete []array;
     }
     
     return 0;
@@ -47,9 +46,24 @@ int riffles(vector<int>& vector1, int arr_len, int &times)
     if (times<1) return 0;
     times--;
     
-    for (auto i = 0; i < arr_len; i++)
+    
+    for (auto i = 0; i < arr_len-1; i+2)
     {
-        if (i==0 || i == arr_len-1)
+        arr_temp.push_back(vector1[i]);       
+    }
+    for (auto i = 1; i < arr_len; i+2)
+    {
+        arr_temp.push_back(vector1[i]);       
+    }
+    vector1 = arr_temp;
+    
+    riffles(vector1, arr_len, times);
+    //delete []arr_temp;    
+    return 0;    
+}
+
+/*
+if (i==0 || i == arr_len-1)
         {
             arr_temp.push_back(vector1[i]);
         }
@@ -58,17 +72,11 @@ int riffles(vector<int>& vector1, int arr_len, int &times)
             if (i%2!=0)
             {
                 arr_temp[i - 1 + arr_len/2] = vector1[i];
+                
             }
             else
             {
                 arr_temp[i - 1] = vector1[i];
             }
         }
-        
-    }
-    vector1 = arr_temp;
-    
-    riffles(vector1, arr_len, times);
-    //delete []arr_temp;    
-    return 0;    
-}
+*/
