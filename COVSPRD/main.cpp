@@ -30,14 +30,13 @@ int calculate(ull a, ull b)
     }
     for (int i=1;i <=b;i++)
     {
-        if (infected >= a)
+        if (infected > a)
         {
-            infected = a;
             break;
         }
         if (i<=10) infected *= 2;
         else if (i>10) infected *= 3;
     }
-    cout << infected << endl;
+    cout << min(a, infected)  << endl;
     return 0;
 }
