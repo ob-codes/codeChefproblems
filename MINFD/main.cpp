@@ -18,15 +18,21 @@ int main()
         for (int i = 0; i < N; i++)
         {
             cin >> FDs[i];
-            if (FDs[i] >= X)  {isFound = true; break;}
+            if (FDs[i] >= X) 
+            {
+                isFound = true; 
+                //break;
+            }
             sumofall += FDs[i];
         }
-        if(isFound)  { cout << "1" << "\n";continue; }
-        count = 0;
-        if (sumofall < X) { cout << "-1" << "\n";continue; }
-        else if (sumofall == X) { cout << N << "\n";continue; }
-        else { cout << minimumFDs(FDs, N, X, sum) << '\n'; }
-
+        if(isFound)  { cout << "1" << endl; }
+        else
+        {
+            count = 0;
+            if (sumofall < X) { cout << "-1" << endl; }
+            else if (sumofall == X) { cout << N << endl; }
+            else { cout << minimumFDs(FDs, N, X, sum) << endl; }
+        }
         delete[] FDs;
     }
     return 0;
@@ -35,14 +41,14 @@ int minimumFDs(int *FDs, int N, int X, int& sum)
 {
     count++;
     int index = -1;
-    int temp_sum = 0;
+    int highest = 0;
     
     for (size_t i = 0; i < N; i++)
     {
-        if (temp_sum < FDs[i]) { temp_sum=FDs[i]; index = i;}               
+        if (highest < FDs[i]) { highest=FDs[i]; index = i;}               
     }
     FDs[index] = 0;
-    sum += temp_sum;
+    sum += highest;
     if (sum >= X) return count;
     return minimumFDs(FDs, N, X, sum);
 }
