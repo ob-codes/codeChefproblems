@@ -10,14 +10,15 @@ int main()
 	
 	while (t--)
     {
-        int m, x;
+        size_t m, x;
         cin >> m >> x;
-        m--;
-
-        vector <int> tempvec;
+        m--;        
+        
         for (int n = 1; n <= x; n++) //N=1 to N=X
         {
             if(n==1) {cout << n << ' '; continue;}
+            vector <int> tempvec;
+            
             for(int i=1; i <= n;i++) //assign number to each index
             {
                 tempvec.push_back(i);
@@ -27,7 +28,10 @@ int main()
                 //vector<int>::iterator index = tempvec.begin() + m-1;
                 //if (*index > tempvec.size()) *index %= tempvec.size();
                 //tempvec.erase(index);
-                if (m > tempvec.size())  m %= tempvec.size();
+                
+                size_t len = tempvec.size();
+                if (m >= len)  m %= len;
+                
                 tempvec.erase(tempvec.begin() +m);
             }            
             cout << tempvec.front() << ' ';
