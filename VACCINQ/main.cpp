@@ -7,17 +7,23 @@ int main() {
 	cin >> t;
 	while(t--)
 	{
-	    int n, p, x, y, temp = 0;
-	    cin >> n >> p >> x >> y;
+	    int n, p, x, y;
+	    cin >> n; 
+		cin >> p;
+		cin >> x;
+		cin >> y;
 	    int tot_time = 0;
-	    for (int i=1; i<=p;i++)
+		int *temp = new int[n];
+
+		for (int i=0; i<n; i++) cin >> temp[i];
+	    
+	    for (int i=0; i<p; i++)
 	    {
-	        cin >> temp;
-            cin.ignore();
-	        if (temp==1) tot_time += y;
+	        if (temp[i]==1) tot_time += y;
 	        else tot_time += x;
 	    }
 	    cout << tot_time << endl;
+		delete[] temp;
 	}
 	return 0;
 }
